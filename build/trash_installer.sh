@@ -3,6 +3,7 @@
 appName=trash
 appVersion=1.2.1.0
 appCreator=AerellDev
+
 local_folder=$HOME/.local/bin
 
 print() {
@@ -27,9 +28,9 @@ main() {
   checking_local_folder
 
   print "downloading file..."
-  curl_file "$local_folder/trash" "https://raw.githubusercontent.com/AerellDev/Trash/main/bin/trash"
-  curl_file "$local_folder/del" "https://raw.githubusercontent.com/AerellDev/Trash/main/bin/del"
-  curl_file "$local_folder/undel" "https://raw.githubusercontent.com/AerellDev/Trash/main/bin/undel"
+  curl_file "$local_folder/trash" "https://raw.githubusercontent.com/AerellDev/Trash/main/build/bin/trash"
+  curl_file "$local_folder/del" "https://raw.githubusercontent.com/AerellDev/Trash/main/build/bin/del"
+  curl_file "$local_folder/undel" "https://raw.githubusercontent.com/AerellDev/Trash/main/build/bin/undel"
   print "downloading success..."
 
   print "set permission"

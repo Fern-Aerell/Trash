@@ -1,0 +1,88 @@
+#!/bin/bash
+
+appName=%pybuild%appname%
+appVersion=%pybuild%appversion%
+appCreator=%pybuild%appcreator%
+
+trash_folder=%pybuild%trash_folder%
+
+print() {
+  echo "$appName: $1"
+}
+
+version() {
+  echo "$appName v$appVersion"
+}
+
+help() {
+  echo "$appName"
+  echo ""
+  echo "  -v                                             :  check version"
+  echo "  -h                                             :  more information"
+  echo "  empty                                          :  cleaning trash"
+  echo "  del <file/dirname>                             :  delete file or dir to trash"
+  echo "  undel <file/dirname> <newfilename/newdirname>  :  undelete file or dir to new file or new directory"
+  echo "  list                                           :  list of file or dir in trash folder"
+  echo ""
+}
+
+empty_trash() {
+  print "emptyin trash..."
+  rm -rf "$trash_folder"/*
+  print "succesfully..."
+}
+
+del() {
+  print "deleting $1 to trash..."
+  mv "$1" "$trash_folder"/
+  print "succesfully"
+}
+
+undel() {
+  print "undeleting $1 to $2..."
+  mv "$trash_folder/$1" "$2"
+  print "succesfully"
+}
+
+checking_trash_folder() {
+  if [ ! -d "$trash_folder" ]; then
+    print "trash folder not found."
+    print "creating trash folder..."
+    mkdir -p "$trash_folder"
+  fi
+}
+
+list_trash_folder() {
+  print "list of deleted files and folders..."
+  echo ""
+  find "$trash_folder" -maxdepth 1 -mindepth 1 -exec basename {} \;
+}
+
+main() {
+  case "$1" in
+    "-v")
+      version
+      ;;
+    "-h")
+      help
+      ;;
+    "empty")
+      empty_trash
+      ;;
+    "del")
+      del "$2"
+      ;;
+    "undel")
+      undel "$2" "$3"
+      ;;
+    "list")
+      list_trash_folder
+      ;;
+    *)
+      print "command invalid, please check \"$appName -h\" for more information."
+      ;;
+  esac
+}
+
+checking_trash_folder
+main "$1" "$2" "$3"

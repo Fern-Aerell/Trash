@@ -3,6 +3,7 @@
 appName=trash
 appVersion=1.2.1.0
 appCreator=AerellDev
+
 local_folder=$HOME/.local/bin
 
 print() {
