@@ -13,7 +13,7 @@ Note : I created this program so that I can delete files in Termux, which doesn'
 ## How to install
 - Run this command in your terminal
 ```
-curl -o trash_installer.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_installer.sh && bash trash_installer.sh && rm trash_installer.sh
+curl -o trash_installer.sh https://raw.githubusercontent.com/AerellDev/Trash/main/build/trash_installer.sh && bash trash_installer.sh && rm trash_installer.sh
 ```
 
 ## How to use
@@ -33,7 +33,7 @@ trash empty
 ## How to uninstall
 - Run this command in your terminal
 ```
-curl -o trash_uninstaller.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_uninstaller.sh && bash trash_uninstaller.sh && rm trash_uninstaller.sh
+curl -o trash_uninstaller.sh https://raw.githubusercontent.com/AerellDev/Trash/main/build/trash_uninstaller.sh && bash trash_uninstaller.sh && rm trash_uninstaller.sh
 ```
 
 Thanks for reading...!
