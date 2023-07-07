@@ -11,7 +11,11 @@ Note : I created this program so that I can delete files in Termux, which doesn'
 - LunarVim
 
 ## How to install
-- Comming soon
+```
+// Run this command in your terminal
+
+curl -o trash_installer.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_installer.sh | bash
+```
 
 ## How to use
 ```
@@ -26,6 +30,10 @@ trash empty
 ```
 
 ## How to uninstall
-- Comming soon
+```
+// Run this command in your terminal
+
+curl -o trash_uninstaller.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_uninstaller.sh | bash
+```
 
 Thanks for reading...!
