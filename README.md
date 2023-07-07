@@ -11,9 +11,8 @@ Note : I created this program so that I can delete files in Termux, which doesn'
 - LunarVim
 
 ## How to install
+- Run this command in your terminal
 ```
-// Run this command in your terminal
-
 curl -o trash_installer.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_installer.sh | bash
 ```
 
@@ -24,15 +23,16 @@ trash -h
 
 // delete file/dir to trash folder
 trash del <file/dir>
+del <file/dir>
+undel <file/dir> <newfile/newdir>
 
 // cleaning trash folder
 trash empty
 ```
 
 ## How to uninstall
+- Run this command in your terminal
 ```
-// Run this command in your terminal
-
 curl -o trash_uninstaller.sh https://raw.githubusercontent.com/AerellDev/Trash/main/trash_uninstaller.sh | bash
 ```
 

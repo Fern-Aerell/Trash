@@ -1,7 +1,7 @@
 #!/bin/bash
 
 appName=trash
-appVersion=1.0.0
+appVersion=1.2.0
 appCreator=AerellDev
 local_folder=$HOME/.local/bin
 
@@ -29,6 +29,13 @@ main() {
   print "delete file..."
   delete_file "$local_folder/trash"
   delete_file "$local_folder/del"
+  delete_file "$local_folder/undel"
+  print "do you want delete trash folder? all trash file will be deleted (y/n) default=n : "
+  read input
+  input_lower="${input,,}"
+  if [ "$input_lower" == "y" ]; then
+    delete_file "$HOME/.trash"
+  fi
   print "delete file success..."
 
   print "uninstalling successfuly..."

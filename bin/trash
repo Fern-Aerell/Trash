@@ -1,7 +1,7 @@
 #!/bin/bash
 
 appName=trash
-appVersion=1.0.0
+appVersion=1.2.0
 appCreator=AerellDev
 
 trash_folder=$HOME/.trash
@@ -17,10 +17,12 @@ version() {
 help() {
   echo "$appName"
   echo ""
-  echo "  -v                  :  check version"
-  echo "  -h                  :  more information"
-  echo "  empty               :  cleaning trash"
-  echo "  del <file/dirname>  :  delete file or dir to trash"
+  echo "  -v                                             :  check version"
+  echo "  -h                                             :  more information"
+  echo "  empty                                          :  cleaning trash"
+  echo "  del <file/dirname>                             :  delete file or dir to trash"
+  echo "  undel <file/dirname> <newfilename/newdirname>  :  undelete file or dir to new file or new directory"
+  echo "  list                                           :  list of file or dir in trash folder"
   echo ""
 }
 
@@ -36,12 +38,24 @@ del() {
   print "succesfully"
 }
 
+undel() {
+  print "undeleting $1 to $2..."
+  mv "$trash_folder/$1" "$2"
+  print "succesfully"
+}
+
 checking_trash_folder() {
   if [ ! -d "$trash_folder" ]; then
     print "trash folder not found."
     print "creating trash folder..."
     mkdir -p "$trash_folder"
   fi
+}
+
+list_trash_folder() {
+  print "list of deleted files and folders..."
+  echo ""
+  find "$trash_folder" -maxdepth 1
 }
 
 main() {
@@ -58,6 +72,12 @@ main() {
     "del")
       del "$2"
       ;;
+    "undel")
+      undel "$2" "$3"
+      ;;
+    "list")
+      list_trash_folder
+      ;;
     *)
       print "command invalid, please check \"$appName -h\" for more information."
       ;;
@@ -65,4 +85,4 @@ main() {
 }
 
 checking_trash_folder
-main "$1" "$2"
+main "$1" "$2" "$3"

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+trash undel "$1" "$2"
