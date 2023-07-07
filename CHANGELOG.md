@@ -1,4 +1,13 @@
-# Latest Version 1.2.0 (07-07-2023)
+# Latest Version 1.2.1.0 (07-07-2023)
+
+is a small fix
+
+## CHANGES
+- trash list now, not show you full path from file or dir which exist in trash folder
+
+-------------------------------------
+
+# 1.2.0 (07-07-2023)
 
 this is a second version.
 
