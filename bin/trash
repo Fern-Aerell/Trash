@@ -1,0 +1,68 @@
+#!/bin/bash
+
+appName=trash
+appVersion=1.0.0
+appCreator=AerellDev
+
+trash_folder=$HOME/.trash
+
+print() {
+  echo "$appName: $1"
+}
+
+version() {
+  echo "$appName v$appVersion"
+}
+
+help() {
+  echo "$appName"
+  echo ""
+  echo "  -v                  :  check version"
+  echo "  -h                  :  more information"
+  echo "  empty               :  cleaning trash"
+  echo "  del <file/dirname>  :  delete file or dir to trash"
+  echo ""
+}
+
+empty_trash() {
+  print "emptyin trash..."
+  rm -rf "$trash_folder"/*
+  print "succesfully..."
+}
+
+del() {
+  print "deleting $1 to trash..."
+  mv "$1" "$trash_folder"/
+  print "succesfully"
+}
+
+checking_trash_folder() {
+  if [ ! -d "$trash_folder" ]; then
+    print "trash folder not found."
+    print "creating trash folder..."
+    mkdir -p "$trash_folder"
+  fi
+}
+
+main() {
+  case "$1" in
+    "-v")
+      version
+      ;;
+    "-h")
+      help
+      ;;
+    "empty")
+      empty_trash
+      ;;
+    "del")
+      del "$2"
+      ;;
+    *)
+      print "command invalid, please check \"$appName -h\" for more information."
+      ;;
+  esac
+}
+
+checking_trash_folder
+main "$1" "$2"
