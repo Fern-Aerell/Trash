@@ -6,6 +6,8 @@ Trash is a program created using a shell language to move files to the trash fol
 
 Note : I created this program so that I can delete files in Termux, which doesn't have a desktop environment, without deleting them directly.
 
+WARN : This only support for linux in proot distro or udroid.
+
 ## The Technology Used Is
 - Shell
 - LunarVim
