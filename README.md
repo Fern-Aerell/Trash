@@ -9,6 +9,7 @@ Note : I created this program so that I can delete files in Termux, which doesn'
 ## The Technology Used Is
 - Shell
 - LunarVim
+- Python
 
 ## How to install
 - Run this command in your terminal
