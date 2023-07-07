@@ -1,12 +1,12 @@
 # TRASH
 
-![trash icon](resources/icon/playstore.png)
+<img alt="trash icon" src="resources/icon/playstore.png" height="150px"> 
 
 Trash is a program created using a shell language to move files to the trash folder, so they are not immediately deleted.
 
 Note : I created this program so that I can delete files in Termux, which doesn't have a desktop environment, without deleting them directly.
 
-## the technology used is
+## The Technology Used Is
 - Shell
 - LunarVim
 
@@ -14,7 +14,7 @@ Note : I created this program so that I can delete files in Termux, which doesn'
 - Comming soon
 
 ## How to use
-'''
+```
 // help or more command
 trash -h
 
@@ -23,7 +23,7 @@ trash del <file/dir>
 
 // cleaning trash folder
 trash empty
-'''
+```
 
 ## How to uninstall
 - Comming soon
